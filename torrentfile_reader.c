@@ -50,7 +50,7 @@ typedef struct {
     void* udata;
 } tfr_t;
 
-#if __WINDOWS__
+#if WIN32
 static char* strndup(const char* str, const unsigned int len)
 {
     char* new;
