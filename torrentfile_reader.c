@@ -257,7 +257,7 @@ void tfr_read_metainfo(
             const char *val;
 
             bencode_string_value(&benk, &val, &len);
-            tfr_event_str(me, "tracker_url", val, len);
+            tfr_event_str(me, "announce", val, len);
         }
         else if (!strncmp(key, "announce-list", klen))
         {
