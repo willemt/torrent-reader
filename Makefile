@@ -30,6 +30,9 @@ tests: main.c torrentfile_reader.o test_torrentfile_reader.c CuTest.c main.c $(B
 	./tests
 
 torrentfile_reader.o: torrentfile_reader.c
+	if [[ uname == "MINGW32_NT-5.1" ]]; then \
+		CCFLAGS = $(CCFLAGS) -D__WINDOWS__; \
+	fi
 	$(CC) $(CCFLAGS) -c -o $@ $^
 
 clean:
