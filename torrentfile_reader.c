@@ -50,6 +50,7 @@ typedef struct {
     void* udata;
 } tfr_t;
 
+#if WIN32
 static char* strndup(const char* str, const unsigned int len)
 {
     char* new;
@@ -58,6 +59,7 @@ static char* strndup(const char* str, const unsigned int len)
     strncpy(new,str,len);
     return new;
 }
+#endif
 
 void tfr_event(tfr_t* me, const char* key)
 {
