@@ -178,9 +178,7 @@ static void __do_info_dict(
     while (bencode_dict_has_next(dict))
     {
         const char *key;
-
         int klen;
-
         bencode_t benk;
 
         bencode_dict_get_next(dict, &benk, &key, &klen);
@@ -219,7 +217,6 @@ static void __do_info_dict(
         else if (!strncmp(key, "pieces", klen))
         {
             int len;
-
             const char *val;
 
             bencode_string_value(&benk, &val, &len);
@@ -263,6 +260,8 @@ void tfr_read_metainfo(
         {
             /*  loop through announce list */
 
+            assert(bencode_is_list(&benk));
+
             while (bencode_list_has_next(&benk))
             {
                 bencode_t innerlist;
@@ -283,7 +282,6 @@ void tfr_read_metainfo(
         else if (!strncmp(key, "comment", klen))
         {
             int len;
-
             const char *val;
 
             bencode_string_value(&benk, &val, &len);
@@ -291,7 +289,6 @@ void tfr_read_metainfo(
         else if (!strncmp(key, "created by", klen))
         {
             int len;
-
             const char *val;
 
             bencode_string_value(&benk, &val, &len);
