@@ -1,5 +1,5 @@
-#ifndef TORRENTFILE_READER_H
-#define TORRENTFILE_READER_H
+#ifndef TORRENT_READER_H
+#define TORRENT_READER_H
 
 void* tfr_new(
     int (*cb_event)(void* udata, const char* key),
@@ -13,4 +13,4 @@ void tfr_read_metainfo(
     const char *buf,
     const int len);
 
-#endif /* TORRENTFILE_READER_H */
+#endif /* TORRENT_READER_H */

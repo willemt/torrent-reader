@@ -41,7 +41,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <string.h>
 
 #include "bencode.h"
-#include "torrentfile_reader.h"
+#include "torrent_reader.h"
 
 typedef struct {
     int (*cb_event)(void* udata, const char* key);
